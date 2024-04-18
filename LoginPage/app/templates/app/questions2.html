@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Question Bank{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JQuery Code -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-Tg0kQCzuQvrS6NGCv8GcY4vT0VBjV4rYaa/bfXx2r0xK3bqmSKDx/11T7pxjEN3I" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-4Vc0GkKmRGmp7H8Un+JpWNbWy/E6J1Jn6p2NC2Dw3GcgKDe6zA/bZm3JN9oV1/+f" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+YEwg8EcNDG5y2e/bzIporG2jW+d8hBDVRnp5f1" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#b1").click(function(){
+                $(".rb").show();
+                $(".rb").attr("disabled",true);
+            });
+        });
+    
+        function getanswers()
+        {   
+            document.getElementById("UserAnswers").innerHTML = "";
+            var e = document.getElementsByTagName("input");
+                for(i=0;i<=e.length;i++)
+                {
+                    if(e[i].type=="radio")
+                    {
+                        if(e[i].checked)
+                        {
+                            document.getElementById("UserAnswers").innerHTML+="Q "+e[i].name + "The Answers You Are Selected Is :"+e[i].value+"<br>";
+                        }
+                    }
+                }
+        }
+
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             /* background-color: #1852897c; */
+            background-image: url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg");
+            /* background-repeat: no-repeat, repeat;  */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 502px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.147);
+            margin-top: 20px; /* Adjusted top margin */
+        }
+
+        h1{
+            background-color: rgba(87, 87, 208, 0.501);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            background-color: #ff00009e; 
+       
+        }
+
+        .pagination {
+           text-align: right; 
+        } 
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Styles for mobile devices */
+            .container {
+                max-width: 90%;
+                padding: 10px; /* Adjusted padding */
+            }
+        }
+
+        tr{
+            display: flex;
+            flex-direction: column;
+        }
+
+        img{
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 100px;
+            background-color: black;
+            margin-right: 150px;
+            height: 50px;
+            font-weight: bold;
+            position: relative;
+            animation: mymove 5s;
+            animation-fill-mode: forwards;
+          }
+          
+          #div1 {animation-timing-function: linear;}
+
+          
+          @keyframes mymove {
+            from {left: 0px;}
+            to {left: 300px;}
+
+        }
+
+        a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 4px 19px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+.button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button1:hover {background-color: #e7e7e7;}
+  
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button2:hover {background-color: #e7e7e7;}
+  
+  .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button3:hover {background-color: #e7e7e7;}
+  
+  .button4 {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+  }
+  
+  .button4:hover {background-color: #e7e7e7;}
+
+  .header {  
+    text-align: center;  
+    color: rgb(17 2 30); 
+    padding: 4px 34px 0px 0px;
+    margin: 15px 2px;
+    display: inline-block;
+  } 
+  p{
+    text-align: right;
+  }
+
+ </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img src="https://www.cinntra.com/assets/image/footer-img/footer-logo.webp" alt="Error" class="right" id="div1">
+        </div>
+        <br>
+        <div>
+            <p>Harsh  <a href="/logout" class="btn btn-success" type="submit" >Logout</a></p>
+        </div>
+        <div>
+            <button id="DjangoPageBtn" class="button button1">Django</button>
+            <button id="PythonPageBtn" class="button button2">Python</button>
+            <button id="CPageBtn" class="button button3">C</button>
+            <button id="JavaPageBtn" class="button button4">Java</button>
+    </div>
+        <h1>Python Questions</h1>
+        <div class="rule">
+            <h2>Read Instructions Carefully:</h2>
+            <ul>
+                <li>Participants are advised to read all instructions provided <br>before starting the test to understand the format, rules,<br> and expectations.</li>
+                <li>Ensure you are in a quiet and well-lit environment where <br> you won't be disturbed during the test.</li>
+                <li> Make sure your device meets the technical requirements <br> for the test, such as compatible browsers, stable internet <br> connection, and required plugins or software.</li>
+                <li> Pay attention to the time limit for each section or the entire  <br>test. Start the test only when you have enough time to <br>complete it without interruptions.</li>
+            </ul>
+         </div>
+        <from action="{% url 'questions2' %}" method="GET">
+            {% csrf_token %}
+            {% for i in exam2 %}
+        <div class="question" >
+            <table>
+                <tr>
+                    <td class="text-primary">{{i.id}} {{i.Question}} ?</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" class="rb" name= "Ans{{i.id}}" id="Option1" value="{{i.Option1}}">{{i.Option1}}</td>
+                    <td><input type="radio" class="rb" name= "Ans{{i.id}}" id="Option2" value="{{i.Option2}}">{{i.Option2}}</td>
+                    <td><input type="radio" class="rb" name= "Ans{{i.id}}" id="Option3" value="{{i.Option3}}">{{i.Option3}}</td>
+                    <td><input type="radio" class="rb" name= "Ans{{i.id}}" id="Option4" value="{{i.Option4}}">{{i.Option4}}</td>
+                </tr>
+                <tr>
+                    <td><label id="corans" class="rb"  style="display: none; color: green;"><b>{{i.Corrans}}</b></label></td>
+                </tr>
+            </table>
+            <br>
+            {% endfor %}
+            <input type="submit" class="btn-btn-success" value="Submit" id="b1" onclick="getanswers()">
+            
+            <br>    
+            <br>
+            <b id="UserAnswers"></b>
+        </div>
+        <div>
+            <a href="/addque2" class="btn btn-success" type="submit" >Add More Question</a>
+        </div>
+        </form>
+        <script>
+            document.getElementById("DjangoPageBtn").addEventListener("click", function() {
+                window.location.href = "http://127.0.0.1:8000/"; // Replace with your desired URL
+            });
+            document.getElementById("PythonPageBtn").addEventListener("click", function() {
+                window.location.href = "http://127.0.0.1:8000/que2/"; // Replace with your desired URL
+            });
+            document.getElementById("CPageBtn").addEventListener("click", function() {
+                window.location.href = "http://127.0.0.1:8000/que3/"; // Replace with your desired URL
+            });
+            document.getElementById("JavaPageBtn").addEventListener("click", function() {
+                window.location.href = "http://127.0.0.1:8000/que4/"; // Replace with your desired URL
+            });
+        </script>
+    </div>
+    
+    
+</body>
+</html>
+
+

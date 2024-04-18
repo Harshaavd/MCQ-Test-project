@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      form{
+     {% comment %} border-style: dotted dashed solid double;
+     border-color: rgb(5, 5, 5);
+     border-radius: 2px; {% endcomment %}
+     text-align: center;
+     width: 790px;
+     height: auto;
+     margin: auto;
+     {% comment %} margin-top: 126px;
+     margin-right: 532px;  {% endcomment %}
+     background-color: #6f828b24; 
+   }
+   .a{
+     border-radius: 20px;
+     
+   }
+
+   body {
+background-image: url("https://media.istockphoto.com/id/480921370/photo/pastel-sky-background.jpg?s=170667a&w=0&k=20&c=NrkB_HW-kiOiICcbaqOFxDk1JGSzg_enebqABt0ZUDQ=");
+background-repeat: no-repeat;
+background-size: 2000px;
+}
+
+h1 {  
+     text-align: center;  
+     padding: 30px;
+     margin-left: -10px;
+     margin-right: -10px;  
+     margin-top: -10px;
+     background-color: #6f828b36;  
+     color: rgb(17 2 30);  
+     }
+  .form-container{
+    width:70%;
+    margin:25px auto;   
+  }
+
+  ::-webkit-input-placeholder {
+    /* Edge */
+    text-align:center;
+  }
+   
+  :-ms-input-placeholder {
+    /* Internet Explorer */
+    text-align:center;  }
+   
+  ::placeholder {
+    text-align:center;  }
+
+ </style>
+</head>
+<body>
+  <h1>Add Questions For Django</h1>
+  <div>
+    <form action="{% url 'addquestion' %}" method="POST" >
+      {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+        {% csrf_token %}
+          <div class="form-container">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Add Question</label>
+              <input type="text" class="form-control" name="que" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Question">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Option1</label>
+              <input type="text" class="form-control" name="option1" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Option">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Options2</label>
+              <input type="text" class="form-control" name="option2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Second Option">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Option3</label>
+              <input type="text" class="form-control" name="option3" id="exampleInputPassword1" placeholder="Enter Third Option">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Option4</label>
+              <input type="text" class="form-control" name="option4" id="exampleInputPassword1" placeholder="Enter Forth Option">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Correct Ans</label>
+              <input type="text" class="form-control" name="correctans" id="exampleInputPassword1" placeholder="Enter Correct Answer">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          
+    </form>
+  </div>
+</body>
+</html>
